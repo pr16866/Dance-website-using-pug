@@ -1,1 +1,1 @@
-{"myname":"ayush thakue","myage":"","number":"","myemail":"","mypassword":""}
+{"name":"harsh is the bad guy","age":"","number":"","email":"","password":""}
