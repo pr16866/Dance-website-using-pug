@@ -2,10 +2,10 @@ const express=require("express");
 const path=require("path");
 const fs=require("fs");
 const app=express();
-const port=80;
+const port=8000;
 const mongoose = require('mongoose');
-const { text } = require("express");
-mongoose.connect('mongodb://localhost/formdata', {useNewUrlParser: true, useUnifiedTopology: true}).then(()=>console.log("connected")).catch((err)=>console.log(err));
+
+mongoose.connect('mongodb+srv://pr16866:8529745331@cluster0.bkcf8.mongodb.net/formdata', {useNewUrlParser: true, useUnifiedTopology: true}).then(()=>console.log("connected")).catch((err)=>console.log(err));
 
 const formSchema = new mongoose.Schema({
     name: String,
@@ -45,7 +45,8 @@ app.post("/contact",(req,res)=>{
     password:req.body.password
      });
     data.save();
-    res.status(200).render("contact");
+    
+    // res.status(200).render("contact");
 });
 
 app.listen(port,()=>{
