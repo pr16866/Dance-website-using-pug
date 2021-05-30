@@ -2,7 +2,7 @@ const express=require("express");
 const path=require("path");
 const fs=require("fs");
 const app=express();
-const port=8000;
+const port=process.env.PORT || 8000;
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb+srv://pr16866:8529745331@cluster0.bkcf8.mongodb.net/formdata', {useNewUrlParser: true, useUnifiedTopology: true}).then(()=>console.log("connected")).catch((err)=>console.log(err));
@@ -45,7 +45,7 @@ app.post("/contact",(req,res)=>{
     password:req.body.password
      });
     data.save();
-    
+
     // res.status(200).render("contact");
 });
 
