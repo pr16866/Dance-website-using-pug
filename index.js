@@ -46,7 +46,7 @@ app.post("/contact",(req,res)=>{
      });
     data.save();
 
-    // res.status(200).render("contact");
+    res.status(200).render("index");
 });
 
 app.listen(port,()=>{
